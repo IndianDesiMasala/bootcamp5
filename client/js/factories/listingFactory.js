@@ -1,11 +1,15 @@
 angular.module('listings', []).factory('Listings', function($http) {
   var methods = {
+	  
     getAll: function() {
+	    
       return $http.get('https://bootcampassignment5.herokuapp.com/api/listings');
+	    
     },
 
 	create: function(listing) {
 	  return $http.post('https://bootcampassignment5.herokuapp.com/api/listings', listing);
+		
     },
 
     delete: function(id) {
@@ -18,4 +22,5 @@ angular.module('listings', []).factory('Listings', function($http) {
   };
 
   return methods;
+	
 });
